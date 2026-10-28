@@ -58,11 +58,11 @@ Pasos de cada uno:
 ```bash
 git checkout main
 git pull
-git checkout -b feature/pruebas-citas
+git checkout -b feature/mas-casos-citas
 # copiar/editar sus archivos
 git add .
-git commit -m "Agrega pruebas de citas y casos guiados por datos"
-git push -u origin feature/pruebas-citas
+git commit -m "Agrega casos guiados por datos"
+git push -u origin feature/mas-casos-citas
 ```
 En GitHub aparece **Compare & pull request** → crear el PR → otro integrante entra a **Files changed → Review changes → Approve** y deja un comentario → **Merge pull request**.
 
