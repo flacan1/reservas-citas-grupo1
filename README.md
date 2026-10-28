@@ -109,7 +109,8 @@ Se descargan en: pestaña **Actions** → la corrida → sección **Artifacts**.
 
 | Nombre | Carné | Rol |
 |---|---|---|
-| Frank David Lacan Pur | 0908-21-3618 | |
-| | | |
-| | | |
-| | | |
+| Frank David Lacan Pur | 0908-21-3618 | Líder: aplicación, CI y documentación |
+| Hector Ernesto Santizo García | 0908-22-8960 | Revisor de código y README |
+| Julio Cesar Ticas Palencia | 0908-22-14264 | Pruebas guiadas por datos |
+| Daniel André Elis Gálvez | 0908-22-7457 | Pruebas de citas |
+| Luis Adrián Pivaral Quiroa | 0908-22-9875 | Demostración de CI en rojo y evidencias |

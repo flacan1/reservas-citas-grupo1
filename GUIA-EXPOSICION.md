@@ -44,15 +44,15 @@ Esta guía no es parte del código; es la lista de pasos para que el equipo cump
 
 ## 3. Repartir el trabajo en ramas y Pull Requests (mínimo 2 PR)
 
-Sugerencia: subir primero solo una parte a `main` y que los demás agreguen el resto por PR, así el historial muestra el trabajo de todos.
+El proyecto completo ya está en `main` (lo subió Frank). Cada uno hace **un cambio pequeño en su propia rama** y abre su Pull Request, para que todos salgan en el historial:
 
-| Integrante | Rama | Qué sube |
-|---|---|---|
-| 1 | `main` (commit inicial) | `server.js`, `public/`, `package.json` |
-| 2 | `feature/pruebas-login` | `cypress.config.js`, `cypress/support/`, `cypress/e2e/login.cy.js`, `cypress/fixtures/usuarios.json` |
-| 3 | `feature/pruebas-citas` | `cypress/e2e/citas.cy.js`, `citas-datos.cy.js`, `cypress/fixtures/citas.json` |
-| 4 | `feature/ci-github-actions` | `.github/workflows/cypress.yml`, badge en el README |
-| 5 | `docs/readme` | README final, integrantes |
+| Integrante | Rama | Tarea | Revisa |
+|---|---|---|---|
+| Julio Ticas | `feature/mas-casos-citas` | Agregar 2 casos nuevos a `cypress/fixtures/citas.json` (ver sección 8a) | Frank |
+| Daniel Elis | `feature/prueba-contador` | Agregar la prueba "el contador baja al cancelar" en `cypress/e2e/citas.cy.js` (sección 8c) | Ernesto |
+| Ernesto Santizo | `docs/readme-ejecucion` | Agregar al README una sección "Problemas comunes" (ej.: si el puerto 3000 está ocupado) | Frank |
+| Adrián Pivaral | `demo/rompe-regla` | Corrida en ROJO (sección 5). **Este PR NO se mezcla** | Todos |
+| Frank Lacan | — | Aprueba PRs, protección de rama, informe | — |
 
 Pasos de cada uno:
 ```bash
@@ -111,11 +111,11 @@ Abrir un PR → el check se pone en **rojo** porque falla la prueba *"REGLA DE N
 
 | Min | Quién | Qué mostrar |
 |---|---|---|
-| 0–2 | Int. 1 | Problema, app funcionando, regla de negocio (intentar un traslape en vivo) |
-| 2–5 | Int. 2 | Código de las pruebas, fixtures y `forEach` (pruebas guiadas por datos) |
-| 5–8 | Int. 3 | GitHub Actions: corrida verde vs. roja, por qué falló |
-| 8–10 | Int. 4 | Artifacts: video, capturas y reporte mochawesome |
-| 10–13 | Int. 5 | Temas investigados: `cy.login` + `cy.session`, reporte y badge |
+| 0–2 | Frank | Problema, app funcionando, regla de negocio (intentar un traslape en vivo) |
+| 2–5 | Julio | Código de las pruebas, fixtures y `forEach` (pruebas guiadas por datos) |
+| 5–8 | Adrián | GitHub Actions: corrida verde vs. roja, por qué falló |
+| 8–10 | Daniel | Artifacts: video, capturas y reporte mochawesome |
+| 10–13 | Ernesto | Temas investigados: `cy.login` + `cy.session`, reporte y badge |
 | 13–15 | Todos | Repo: README, historial de commits, PRs con revisión y merge |
 
 ---
