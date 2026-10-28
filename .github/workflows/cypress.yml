@@ -18,14 +18,18 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 22
+          cache: npm
 
-      # Instala dependencias, levanta la app en el puerto 3000 y corre Cypress
-      - name: Ejecutar Cypress
-        uses: cypress-io/github-action@v6
-        with:
-          start: npm start
-          wait-on: 'http://localhost:3000'
-          wait-on-timeout: 60
+      - name: Instalar dependencias (incluye Cypress)
+        run: npm ci
+
+      - name: Verificar Cypress
+        run: npx cypress verify
+
+      # Levanta la app en el puerto 3000, espera a que responda,
+      # corre toda la suite de Cypress y apaga la app al terminar
+      - name: Ejecutar pruebas Cypress
+        run: npm test
 
       # Sube video, capturas y reporte SIEMPRE (también si las pruebas fallan)
       - name: Subir videos

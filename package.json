@@ -7,7 +7,7 @@
     "start": "node server.js",
     "cy:open": "cypress open",
     "cy:run": "cypress run",
-    "test": "start-server-and-test start http://localhost:3000 cy:run"
+    "test": "start-server-and-test start http-get://127.0.0.1:3000 cy:run"
   },
   "license": "MIT",
   "devDependencies": {
