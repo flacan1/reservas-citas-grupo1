@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistema de Reservas de Citas</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ===================== PANTALLA DE LOGIN ===================== -->
+  <main id="vista-login" class="vista">
+    <section class="tarjeta tarjeta-login">
+      <h1 class="titulo">Reservas de Citas</h1>
+      <p class="subtitulo">Inicia sesión para continuar</p>
+
+      <form id="form-login" novalidate>
+        <label for="usuario">Usuario</label>
+        <input type="text" id="usuario" name="usuario" autocomplete="username">
+
+        <label for="password">Contraseña</label>
+        <input type="password" id="password" name="password" autocomplete="current-password">
+
+        <button type="submit" id="btn-login" class="btn btn-primario">Ingresar</button>
+        <p id="login-error" class="mensaje mensaje-error oculto" role="alert"></p>
+      </form>
+    </section>
+  </main>
+
+  <!-- ===================== PANEL (solo con sesión) ===================== -->
+  <div id="panel" class="oculto">
+    <header class="barra">
+      <h1 class="titulo-barra">Sistema de Reservas de Citas</h1>
+      <div class="barra-derecha">
+        <span id="usuario-actual"></span>
+        <button type="button" id="btn-logout" class="btn btn-secundario">Cerrar sesión</button>
+      </div>
+    </header>
+
+    <main class="contenido">
+      <section class="tarjeta">
+        <h2>Agendar cita</h2>
+        <form id="form-cita" novalidate>
+          <div class="campos">
+            <div class="campo">
+              <label for="cliente">Cliente</label>
+              <input type="text" id="cliente" name="cliente" placeholder="Nombre del cliente">
+            </div>
+            <div class="campo">
+              <label for="fecha">Fecha</label>
+              <input type="date" id="fecha" name="fecha">
+            </div>
+            <div class="campo">
+              <label for="hora">Hora</label>
+              <input type="time" id="hora" name="hora">
+            </div>
+          </div>
+          <button type="submit" id="btn-agendar" class="btn btn-primario">Agendar</button>
+        </form>
+        <p id="mensaje" class="mensaje oculto" role="status"></p>
+      </section>
+
+      <section class="tarjeta">
+        <h2>Citas agendadas <span id="contador-citas" class="contador">0</span></h2>
+        <table id="tabla-citas" class="tabla">
+          <thead>
+            <tr>
+              <th>Cliente</th>
+              <th>Fecha</th>
+              <th>Hora</th>
+              <th>Acción</th>
+            </tr>
+          </thead>
+          <tbody id="cuerpo-tabla"></tbody>
+        </table>
+        <p id="sin-citas" class="vacio">No hay citas agendadas.</p>
+      </section>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

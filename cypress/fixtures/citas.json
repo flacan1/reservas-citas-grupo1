@@ -1,0 +1,74 @@
+[
+  {
+    "descripcion": "cita válida por la mañana",
+    "cliente": "Ana López",
+    "fecha": "2026-11-10",
+    "hora": "09:00",
+    "esperado": "valido",
+    "mensaje": "Cita agendada correctamente"
+  },
+  {
+    "descripcion": "cita válida en el límite de cierre",
+    "cliente": "Carlos Pérez",
+    "fecha": "2026-11-10",
+    "hora": "17:00",
+    "esperado": "valido",
+    "mensaje": "Cita agendada correctamente"
+  },
+  {
+    "descripcion": "cita válida en el límite de apertura",
+    "cliente": "María Gómez",
+    "fecha": "2026-12-01",
+    "hora": "08:00",
+    "esperado": "valido",
+    "mensaje": "Cita agendada correctamente"
+  },
+  {
+    "descripcion": "sin nombre de cliente",
+    "cliente": "",
+    "fecha": "2026-11-10",
+    "hora": "10:00",
+    "esperado": "invalido",
+    "mensaje": "El nombre del cliente es obligatorio"
+  },
+  {
+    "descripcion": "nombre de cliente muy corto",
+    "cliente": "Al",
+    "fecha": "2026-11-10",
+    "hora": "10:00",
+    "esperado": "invalido",
+    "mensaje": "El nombre del cliente debe tener al menos 3 caracteres"
+  },
+  {
+    "descripcion": "sin fecha",
+    "cliente": "Luis Martínez",
+    "fecha": "",
+    "hora": "10:00",
+    "esperado": "invalido",
+    "mensaje": "La fecha es obligatoria"
+  },
+  {
+    "descripcion": "sin hora",
+    "cliente": "Luis Martínez",
+    "fecha": "2026-11-10",
+    "hora": "",
+    "esperado": "invalido",
+    "mensaje": "La hora es obligatoria"
+  },
+  {
+    "descripcion": "hora antes de la apertura",
+    "cliente": "Sofía Ramírez",
+    "fecha": "2026-11-10",
+    "hora": "07:30",
+    "esperado": "invalido",
+    "mensaje": "La hora debe estar dentro del horario de atención (08:00 a 17:00)"
+  },
+  {
+    "descripcion": "hora después del cierre",
+    "cliente": "Sofía Ramírez",
+    "fecha": "2026-11-10",
+    "hora": "18:15",
+    "esperado": "invalido",
+    "mensaje": "La hora debe estar dentro del horario de atención (08:00 a 17:00)"
+  }
+]

@@ -1,0 +1,53 @@
+name: Pruebas Cypress
+
+# Se ejecuta en cada push y en cada pull request
+on:
+  push:
+  pull_request:
+
+jobs:
+  cypress:
+    name: Pruebas E2E con Cypress
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Descargar el código
+        uses: actions/checkout@v4
+
+      - name: Instalar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      # Instala dependencias, levanta la app en el puerto 3000 y corre Cypress
+      - name: Ejecutar Cypress
+        uses: cypress-io/github-action@v6
+        with:
+          start: npm start
+          wait-on: 'http://localhost:3000'
+          wait-on-timeout: 60
+
+      # Sube video, capturas y reporte SIEMPRE (también si las pruebas fallan)
+      - name: Subir videos
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cypress-videos
+          path: cypress/videos
+          if-no-files-found: ignore
+
+      - name: Subir capturas
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cypress-capturas
+          path: cypress/screenshots
+          if-no-files-found: ignore
+
+      - name: Subir reporte mochawesome
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: reporte-mochawesome
+          path: cypress/reports
+          if-no-files-found: ignore

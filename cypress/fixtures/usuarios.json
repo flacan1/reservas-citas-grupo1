@@ -1,0 +1,10 @@
+{
+  "valido": { "usuario": "admin", "password": "admin123" },
+  "invalidos": [
+    { "descripcion": "contraseña incorrecta", "usuario": "admin", "password": "clave-mala" },
+    { "descripcion": "usuario incorrecto", "usuario": "juan", "password": "admin123" },
+    { "descripcion": "ambos incorrectos", "usuario": "invitado", "password": "12345" },
+    { "descripcion": "campos vacíos", "usuario": "", "password": "" },
+    { "descripcion": "mayúsculas en el usuario", "usuario": "ADMIN", "password": "admin123" }
+  ]
+}
