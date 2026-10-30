@@ -73,6 +73,37 @@ Después de `cypress run` se generan:
 
 Para agregar un caso nuevo a las pruebas guiadas por datos solo hay que agregar un objeto a `cypress/fixtures/citas.json`.
 
+## Problemas comunes
+
+Soluciones rápidas para Windows (PowerShell).
+
+**El puerto 3000 ya está ocupado** (`EADDRINUSE` al hacer `npm start`).
+Otro programa, o una corrida anterior de la app, sigue usando el puerto. Busca su número de proceso (PID) y ciérralo:
+
+```powershell
+netstat -ano | findstr :3000     # el PID es el último número de la línea
+taskkill /PID <número> /F        # reemplaza <número> por ese PID
+```
+
+**`Cypress could not verify` / `Cypress not installed`**
+Falta descargar el programa de Cypress en la computadora. Instálalo y verifícalo:
+
+```bash
+npx cypress install
+npx cypress verify
+```
+
+**Las pruebas fallan con `cy.visit() failed`**
+La app no está corriendo en `http://localhost:3000`. Levántala en otra terminal con `npm start` y luego corre `npx cypress run`, o usa `npm test`, que levanta la app, corre las pruebas y la apaga sola.
+
+**Errores raros después de cambiar de rama**
+Las dependencias pueden haber quedado desactualizadas. Bórralas y vuelve a instalarlas:
+
+```powershell
+Remove-Item -Recurse -Force node_modules
+npm install
+```
+
 ## Integración continua (GitHub Actions)
 
 El workflow `.github/workflows/cypress.yml` corre en cada **push** y **pull request**:
