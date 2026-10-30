@@ -70,5 +70,21 @@
     "hora": "18:15",
     "esperado": "invalido",
     "mensaje": "La hora debe estar dentro del horario de atención (08:00 a 17:00)"
+  },
+  {
+    "descripcion": "hora a la medianoche",
+    "cliente": "Diego Paz",
+    "fecha": "2026-11-12",
+    "hora": "00:00",
+    "esperado": "invalido",
+    "mensaje": "La hora debe estar dentro del horario de atención (08:00 a 17:00)"
+  },
+  {
+    "descripcion": "nombre con exactamente 3 letras",
+    "cliente": "Ana",
+    "fecha": "2026-11-13",
+    "hora": "11:00",
+    "esperado": "valido",
+    "mensaje": "Cita agendada correctamente"
   }
 ]
