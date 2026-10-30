@@ -6,7 +6,7 @@ Esta guía no es parte del código; es la lista de pasos para que el equipo cump
 
 ## 1. Correr el proyecto en la computadora (Windows)
 
-1. Instalar **Node.js LTS** desde https://nodejs.org (si no lo tienen).
+1. Instalar **Node.js 22 o superior (LTS)** desde https://nodejs.org y verificar con `node -v`.
 2. Abrir la carpeta `reservas-citas-grupo1` en VS Code → menú *Terminal* → *Nueva terminal*.
 3. Ejecutar:
    ```bash

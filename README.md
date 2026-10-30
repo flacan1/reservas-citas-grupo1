@@ -35,7 +35,7 @@ Validaciones adicionales:
 
 ## Cómo ejecutarla
 
-Requisitos: [Node.js](https://nodejs.org/) 18 o superior.
+Requisitos: [Node.js](https://nodejs.org/) 22 o superior (lo pide `start-server-and-test` 3.x). Verifícalo con `node -v`.
 
 ```bash
 npm install        # instala Cypress y el reporte
