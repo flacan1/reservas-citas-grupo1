@@ -65,11 +65,13 @@ Después de `cypress run` se generan:
 
 ## Pruebas incluidas
 
+En total son **27 pruebas** (login 9, citas 7, guiadas por datos 11).
+
 | Archivo | Qué prueba |
 |---|---|
 | `cypress/e2e/login.cy.js` | Login correcto e incorrecto, panel oculto sin sesión, cerrar sesión y 5 credenciales inválidas **guiadas por datos** (`usuarios.json`) |
-| `cypress/e2e/citas.cy.js` | Que una cita agendada aparezca en la tabla, que se rechace un horario ocupado (traslape), que cancelar la quite, que el horario quede libre al cancelar y que los datos persistan |
-| `cypress/e2e/citas-datos.cy.js` | 9 casos válidos e inválidos **guiados por datos** leídos de `cypress/fixtures/citas.json` con `forEach` |
+| `cypress/e2e/citas.cy.js` | Que una cita agendada aparezca en la tabla, que se rechace un horario ocupado (traslape), que cancelar la quite, que el contador baje al cancelar, que el horario quede libre al cancelar y que los datos persistan |
+| `cypress/e2e/citas-datos.cy.js` | 11 casos válidos e inválidos **guiados por datos** leídos de `cypress/fixtures/citas.json` con `forEach` |
 
 Para agregar un caso nuevo a las pruebas guiadas por datos solo hay que agregar un objeto a `cypress/fixtures/citas.json`.
 
