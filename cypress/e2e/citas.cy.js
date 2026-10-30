@@ -82,4 +82,13 @@ describe('Gestión de citas', () => {
     cy.reload();
     cy.get('#cuerpo-tabla .fila-cita').should('have.length', 1);
   });
+
+  it('el contador baja al cancelar', () => {
+    cy.agendarCita('Ana López', '2026-11-10', '09:00');
+    cy.agendarCita('Pedro Ruiz', '2026-11-10', '10:00');
+    cy.get('#contador-citas').should('have.text', '2');
+    cy.get('.btn-cancelar').first().click();
+    cy.get('#contador-citas').should('have.text', '1');
+    cy.get('#mensaje').should('have.text', 'Cita cancelada');
+  });
 });
