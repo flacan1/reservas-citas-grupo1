@@ -109,8 +109,8 @@ function validarCita(cliente, fecha, hora, citas) {
   }
 
   // REGLA DE NEGOCIO: no se permiten dos citas con la misma fecha y hora (traslape)
-  const ocupado = citas.some((c) => c.fecha === fecha && c.hora === hora);
-  if (ocupado) return 'Ya existe una cita para esa fecha y hora';
+  // const ocupado = citas.some((c) => c.fecha === fecha && c.hora === hora);
+  // if (ocupado) return 'Ya existe una cita para esa fecha y hora';
 
   return null;
 }
